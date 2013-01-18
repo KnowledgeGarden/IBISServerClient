@@ -1,0 +1,32 @@
+IBISServerClient
+License: LGPL
+Technology: Java
+
+DESCRIPTION
+This is a simple desktop client which communicates with the IBIS-Server online.
+It is capable of uploading existing Compendium exported XML documents to the server,
+and to download selected files from the server.
+
+It really is intended to model candidate extensions to Compendium itself such that
+files can be handled directly in Compendium, say, by a new feature: Export to Server, or
+Import from Server.
+
+Eventually, the server should be extended to index each of the documents it has, allowing
+a new feature to be added to Compendium which allows one to choose a "parent" node, create
+a query string based, say, on the topic of that node, ask the server with that query,
+and receive a list of nodes which satisfy that query, from which new "child" nodes can be
+added to the IBIS conversation directly.
+
+BUILDING
+This is an Eclipse project. To build it with Ant or Maven, suitable build or pom files
+must be created.
+
+USAGE 
+That is explained in the PDF file IBISServerDesign.pdf.
+Briefly, on bootup, the client asks for the URL and port of the server.
+When files are uploaded, the file must be selected by browsing, then a short description is added,
+and the file type, which depends on the platform from which the document derives:
+	For Compendium, enter "cm" without the quotes.
+Files can be downloaded from the server by using the Server menu to fetch the latest list of
+available files, then clicking on the desired file. That file is brought down, after which
+it must be saved to the directory and with the desired name.
